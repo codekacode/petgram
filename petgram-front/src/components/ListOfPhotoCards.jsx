@@ -1,11 +1,12 @@
 import React from 'react'
 import PhotoCard from './PhotoCard'
+import { ListOfPhotoCard } from './styles'
 
 function ListOfPhotoCards() {
   return (
-    <ul>
+    <ListOfPhotoCard>
       {[1,2,3].map(id => <PhotoCard key={id}/>)}
-    </ul>
+    </ListOfPhotoCard>
   )
 }
 

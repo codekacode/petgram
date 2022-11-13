@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { fadeIn } from "../styles/animation";
 
 export const Anchor = styled.div`
   display: flex;
@@ -44,6 +45,7 @@ export const PhotoCardImgWrapper = styled.div`
 `
 
 export const PhotoCardImg = styled.img`
+  ${fadeIn()};
   box-shadow: 0px 10px 14px rgba(0, 0, 0, 0.2);
   height: 100%;
   object-fit: cover;
@@ -61,8 +63,12 @@ export const PhotoCardButton = styled.button`
   }
 `
 
+export const ListOfPhotoCard = styled.ul`
+  padding: 30px;
+`
+
 export const Svg = styled.svg`
   width: 200px;
-  margin-left: -10px;
+  margin-left: 10px;
   margin-top: -30px;
 `
