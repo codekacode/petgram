@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { fadeIn } from "../styles/animation";
+import styled, {css} from "styled-components";
+import { fadeIn, skeletonStyle } from "../styles/animation";
 
 export const Anchor = styled.div`
   display: flex;
@@ -18,31 +18,38 @@ export const Image = styled.img`
   object-fit:cover;
   height: 75px;
   width: 75px;
+  ${props => css`
+    ${skeletonStyle(props.light)}
+  `}
 `
 
 export const List = styled.ul`
   display: flex;
-  overflow:scroll;
+  overflow: scroll;
   width: 100%;
   list-style: none;
+  ${(props) =>
+    props.fixed &&
+    css`
+       {
+        background-color: #fff;
+        border-radius: 60px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        left: 0;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 5px;
+        position: fixed;
+        right: 0;
+        top: -20px;
+        transform: scale(0.5);
+        z-index: 1;
+      }
+    `}
   &::-webkit-scrollbar {
     display: none;
   }
-  &.fixed {
-    background-color:#fff;
-    border-radius: 60px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
-    left: 0;
-    margin: 0 auto;
-    max-width: 400px;
-    padding:5px;
-    position: fixed;
-    right: 0;
-    top: -20px;
-    transform: scale(.5);
-    z-index: 1;
-  }
-`
+`;
 
 export const Item = styled.li`
   padding: 0 8px;
@@ -85,4 +92,22 @@ export const Svg = styled.svg`
   width: 200px;
   margin-left: 10px;
   margin-top: -30px;
+`
+
+export const ContainerCategorySkeleton = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+export const Title = styled.div`
+  width:26px;
+  height:15px;
+  margin-top:8px;
+  ${props => css`
+    ${skeletonStyle(props.light)}
+  `}
+`
+
+export const Article = styled.div`
+  min-height: 200px;
 `

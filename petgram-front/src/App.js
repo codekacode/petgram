@@ -1,4 +1,5 @@
 import './App.css';
+import { CategorySkeleton } from './components/Category';
 import ListOfCategories from './components/ListOfCategories';
 import ListOfPhotoCards from './components/ListOfPhotoCards';
 import { Logo } from './components/Logo';
